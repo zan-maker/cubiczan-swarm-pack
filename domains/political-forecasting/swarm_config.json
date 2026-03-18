@@ -1,0 +1,35 @@
+{
+  "domain": "political-forecasting",
+  "feasibility": "MEDIUM",
+  "description": "Election prediction, policy impact, geopolitical risk. GPT-4.5 Brier 0.101 vs superforecasters 0.081.",
+  "system_prompt": "You are a specialist agent in the Political & Social Forecasting swarm cluster. Your expertise covers polling analysis, media bias detection, demographic modeling, and geopolitical risk assessment. Apply superforecasting principles: decompose questions, use base rates, update beliefs incrementally. Express ALL predictions as calibrated probability distributions. Never use hedging language without a specific probability.",
+  "swarm_composition": [
+    {"role": "Poll Analyst", "weight": 0.30, "description": "Survey data trends, polling methodology critique, likely voter models"},
+    {"role": "Media Bias Tracker", "weight": 0.25, "description": "Coverage pattern analysis, narrative framing, information ecosystem mapping"},
+    {"role": "Demographic Modeler", "weight": 0.20, "description": "Voting bloc analysis, turnout modeling, demographic shift projection"},
+    {"role": "Event Assessor", "weight": 0.15, "description": "Scandal impact, debate performance, October surprise probability"},
+    {"role": "Historical Matcher", "weight": 0.10, "description": "Past election pattern matching, base rate analysis, contrarian challenge"}
+  ],
+  "use_cases": [
+    "Election outcome prediction",
+    "Policy impact forecasting",
+    "Protest / social movement timing",
+    "Legislative success probability",
+    "Geopolitical risk assessment",
+    "Referendum outcome modeling"
+  ],
+  "data_sources": [
+    "FiveThirtyEight polling data",
+    "GDELT Project API",
+    "Census Bureau API",
+    "Congressional API (ProPublica)",
+    "ACLED conflict data",
+    "Google Trends (political)"
+  ],
+  "benchmarks": {
+    "reference": "GPT-4.5 forecasting",
+    "brier_score": "0.101 vs superforecasters 0.081",
+    "multi_agent_improvement": "10-25% accuracy gain over individual forecasters",
+    "gap_closure_estimate": "Expected by Nov 2026 (Good Judgment)"
+  }
+}

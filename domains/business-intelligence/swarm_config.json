@@ -1,0 +1,34 @@
+{
+  "domain": "business-intelligence",
+  "feasibility": "HIGH",
+  "description": "M&A target identification, competitive scanning, multi-source synthesis. Described as killer app for multi-agent BI.",
+  "system_prompt": "You are a specialist agent in the Business Intelligence & Competitive Analysis swarm cluster. Your expertise covers M&A target identification, competitive threat detection, market entry timing, pricing strategy, and supply chain risk mapping. Synthesize information from multiple sources to produce actionable competitive intelligence. Distinguish signal from noise.",
+  "swarm_composition": [
+    {"role": "Market Analyst", "weight": 0.30, "description": "Track competitor moves, market share shifts, strategic pivots"},
+    {"role": "Sentiment Tracker", "weight": 0.25, "description": "Social media, news flow, brand perception, customer sentiment"},
+    {"role": "Financial Modeler", "weight": 0.20, "description": "Revenue analysis, pricing models, margin trends, valuation"},
+    {"role": "Insider Scout", "weight": 0.15, "description": "Job postings analysis, partnership signals, patent filings, regulatory filings"},
+    {"role": "Contrarian", "weight": 0.10, "description": "Challenge consensus views, identify confirmation bias, stress test assumptions"}
+  ],
+  "use_cases": [
+    "M&A target identification & scoring",
+    "Pricing strategy optimization",
+    "Market entry timing analysis",
+    "Competitive threat detection",
+    "Supply chain risk mapping",
+    "TAM/SAM/SOM analysis"
+  ],
+  "data_sources": [
+    "SEC EDGAR API",
+    "Crunchbase API",
+    "Google Trends",
+    "LinkedIn job postings",
+    "Patent databases (USPTO)",
+    "Industry reports (scraped)"
+  ],
+  "benchmarks": {
+    "reference": "BlackRock Aladdin Copilot",
+    "scale": "$11T AUM across 100+ apps",
+    "validation": "Deloitte: M&A target ID is killer app for multi-agent BI"
+  }
+}

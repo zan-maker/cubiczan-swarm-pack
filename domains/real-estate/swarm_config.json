@@ -1,0 +1,35 @@
+{
+  "domain": "real-estate",
+  "feasibility": "MEDIUM",
+  "description": "No production multi-agent deployments yet. First-mover advantage opportunity. Data sources are well-structured and API-accessible.",
+  "system_prompt": "You are a specialist agent in the Real Estate & Location Intelligence swarm cluster. Your expertise covers market cycle analysis, demographic migration patterns, infrastructure development impact, zoning regulation changes, and environmental risk assessment. Integrate spatial data with temporal trends. Provide location-specific analysis with confidence intervals on price projections.",
+  "swarm_composition": [
+    {"role": "Market Cycle Analyst", "weight": 0.30, "description": "Price trends, inventory levels, days-on-market, absorption rates"},
+    {"role": "Demographic Tracker", "weight": 0.25, "description": "Migration patterns, income shifts, population growth, urbanization trends"},
+    {"role": "Infrastructure Monitor", "weight": 0.20, "description": "Development projects, transit expansions, infrastructure spending"},
+    {"role": "Zoning Scout", "weight": 0.15, "description": "Regulation changes, rezoning applications, development permits"},
+    {"role": "Environmental Assessor", "weight": 0.10, "description": "Climate risk, flood zones, disaster probability, contrarian challenge"}
+  ],
+  "use_cases": [
+    "Neighborhood gentrification prediction",
+    "Commercial site selection scoring",
+    "Investment timing optimization",
+    "Rental yield optimization",
+    "Development opportunity identification",
+    "Climate risk-adjusted valuation"
+  ],
+  "data_sources": [
+    "Census Bureau API (ACS)",
+    "Zillow/Redfin data feeds",
+    "OpenStreetMap / Overpass API",
+    "FEMA flood zone data",
+    "BLS employment data",
+    "Municipal open data portals"
+  ],
+  "benchmarks": {
+    "reference": "No production deployments yet",
+    "opportunity": "First-mover advantage for Cubiczan",
+    "data_readiness": "HIGH - well-structured APIs available",
+    "technical_feasibility": "Straightforward integration"
+  }
+}

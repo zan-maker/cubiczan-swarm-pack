@@ -1,0 +1,35 @@
+{
+  "domain": "healthcare-pharma",
+  "feasibility": "MEDIUM",
+  "description": "Drug repurposing, clinical trial optimization, regulatory navigation. Constraint: 99%+ accuracy demands human-in-loop.",
+  "system_prompt": "You are a specialist agent in the Healthcare & Drug Discovery swarm cluster. Your expertise covers biomedical literature analysis, clinical trial design, FDA regulatory pathways, patent landscape analysis, and drug repurposing. CRITICAL: All outputs must include confidence intervals and uncertainty quantification. Flag any recommendation below 99% confidence for mandatory human review. Cite primary sources (PubMed IDs, ClinicalTrials.gov NCT numbers).",
+  "swarm_composition": [
+    {"role": "Biomedical Researcher", "weight": 0.30, "description": "Literature analysis, mechanism of action, pathway mapping"},
+    {"role": "Clinical Data Miner", "weight": 0.25, "description": "Trial results analysis, patient stratification, endpoint evaluation"},
+    {"role": "Regulatory Navigator", "weight": 0.20, "description": "FDA pathways (505(b)(2), BLA, NDA), regulatory precedent analysis"},
+    {"role": "Patent Strategist", "weight": 0.15, "description": "IP landscape mapping, freedom-to-operate, patent cliff analysis"},
+    {"role": "Market Forecaster", "weight": 0.10, "description": "Commercial viability, pricing analysis, payer landscape, contrarian view"}
+  ],
+  "use_cases": [
+    "Drug repurposing candidate identification",
+    "Clinical trial design optimization",
+    "Biomarker discovery & validation",
+    "Competitive pipeline tracking",
+    "Regulatory pathway navigation",
+    "Patent expiry impact analysis"
+  ],
+  "data_sources": [
+    "PubMed API (NCBI E-utilities)",
+    "ClinicalTrials.gov API",
+    "FDA OpenFDA API",
+    "UniProt / ChEMBL databases",
+    "USPTO Patent API",
+    "DrugBank (open data)"
+  ],
+  "benchmarks": {
+    "reference": "Bayer multi-agent system",
+    "dossier_automation": "80% of regulatory dossiers",
+    "constraint": "99%+ accuracy required, human-in-loop mandatory",
+    "near_production": "IQVIA + NVIDIA clinical trial automation"
+  }
+}

@@ -1,0 +1,146 @@
+version: "3.9"
+
+services:
+  # ============= MIROFISH CORE =============
+  mirofish:
+    build:
+      context: ./mirofish
+      dockerfile: Dockerfile
+    container_name: cubiczan-mirofish
+    env_file: .env
+    ports:
+      - "3000:3000"   # Frontend (Vue)
+      - "5001:5001"   # Backend (Flask)
+    restart: unless-stopped
+    volumes:
+      - ./mirofish/backend/uploads:/app/backend/uploads
+      - ./domains:/app/domains:ro
+    depends_on:
+      - neo4j
+      - qdrant
+      - redis
+    networks:
+      - cubiczan-net
+
+  # ============= ORCHESTRATOR =============
+  orchestrator:
+    build:
+      context: ./orchestrator
+      dockerfile: Dockerfile
+    container_name: cubiczan-orchestrator
+    env_file: .env
+    ports:
+      - "5002:5002"
+    restart: unless-stopped
+    volumes:
+      - ./domains:/app/domains:ro
+      - ./agents:/app/agents:ro
+    depends_on:
+      - redis
+      - neo4j
+      - qdrant
+    networks:
+      - cubiczan-net
+
+  # ============= OLLAMA (Self-Hosted LLM) =============
+  ollama:
+    image: ollama/ollama:latest
+    container_name: cubiczan-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    networks:
+      - cubiczan-net
+
+  # ============= NEO4J (Knowledge Graph) =============
+  neo4j:
+    image: neo4j:5-community
+    container_name: cubiczan-neo4j
+    environment:
+      - NEO4J_AUTH=neo4j/${NEO4J_PASSWORD:-cubiczan_secure_password}
+      - NEO4J_PLUGINS=["apoc","graph-data-science"]
+    ports:
+      - "7474:7474"   # Browser
+      - "7687:7687"   # Bolt
+    volumes:
+      - neo4j-data:/data
+      - neo4j-logs:/logs
+    restart: unless-stopped
+    networks:
+      - cubiczan-net
+
+  # ============= QDRANT (Vector Store) =============
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: cubiczan-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant-data:/qdrant/storage
+    restart: unless-stopped
+    networks:
+      - cubiczan-net
+
+  # ============= REDIS (Message Queue & Cache) =============
+  redis:
+    image: redis:7-alpine
+    container_name: cubiczan-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    networks:
+      - cubiczan-net
+
+  # ============= GRAFANA (Monitoring) =============
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: cubiczan-grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-cubiczan_admin}
+    ports:
+      - "3001:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+    restart: unless-stopped
+    networks:
+      - cubiczan-net
+
+  # ============= PROMETHEUS (Metrics) =============
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: cubiczan-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    restart: unless-stopped
+    networks:
+      - cubiczan-net
+
+volumes:
+  ollama-models:
+  neo4j-data:
+  neo4j-logs:
+  qdrant-data:
+  redis-data:
+  grafana-data:
+  prometheus-data:
+
+networks:
+  cubiczan-net:
+    driver: bridge

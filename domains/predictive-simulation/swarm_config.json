@@ -1,0 +1,34 @@
+{
+  "domain": "predictive-simulation",
+  "feasibility": "HIGH",
+  "description": "MiroFish core: swarm agents simulate social dynamics for predictive forecasting. Direct integration with OASIS engine.",
+  "system_prompt": "You are a specialist agent in the Predictive Simulation swarm cluster. You operate within MiroFish's parallel digital world simulation engine. Your role is to embody realistic personas with distinct personalities, memories, and behavioral logic. Simulate authentic social interactions on Twitter/Reddit-style platforms. Your actions (posts, likes, comments, follows) should reflect your assigned persona's genuine beliefs and behavioral patterns, NOT artificial consensus.",
+  "swarm_composition": [
+    {"role": "Scenario Architect", "weight": 0.25, "description": "Design simulation parameters, define seed events, set environmental variables"},
+    {"role": "Social Dynamics Modeler", "weight": 0.25, "description": "Model opinion cascades, information propagation, group polarization"},
+    {"role": "Behavioral Simulator", "weight": 0.20, "description": "Embody distinct personas, generate authentic social media behavior"},
+    {"role": "Pattern Detector", "weight": 0.20, "description": "Identify emergent patterns, tipping points, phase transitions in simulation"},
+    {"role": "Contrarian / Edge Case", "weight": 0.10, "description": "Inject unexpected variables, test simulation robustness, challenge consensus"}
+  ],
+  "use_cases": [
+    "Public opinion event prediction",
+    "Policy impact simulation",
+    "Market reaction forecasting",
+    "Product launch reception modeling",
+    "Crisis scenario planning",
+    "Social movement dynamics"
+  ],
+  "data_sources": [
+    "MiroFish OASIS engine (built-in)",
+    "Zep knowledge graph (built-in)",
+    "User-uploaded seed documents",
+    "News APIs for seed events",
+    "Social media APIs for calibration"
+  ],
+  "benchmarks": {
+    "reference": "MiroFish",
+    "github_stars": "32.3K+",
+    "backer": "Shanda Group",
+    "capability": "High-fidelity parallel digital world simulation"
+  }
+}

@@ -1,0 +1,63 @@
+# =====================================================
+# CUBICZAN Agent Swarm — .gitignore
+# =====================================================
+
+# Environment & secrets
+.env
+*.env.local
+*.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+.pnp.*
+
+# Database files (generated at runtime)
+*.db
+*.sqlite
+*.sqlite3
+cubiczan_swarm.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docker
+docker-compose.override.yml
+
+# Uploads (user data)
+mirofish/backend/uploads/*
+!mirofish/backend/uploads/.gitkeep
+
+# Monitoring data (runtime)
+grafana-data/
+prometheus-data/
+
+# Build artifacts
+*.pyc
+*.pyo
+
+# Logs
+*.log
+agent_log.jsonl

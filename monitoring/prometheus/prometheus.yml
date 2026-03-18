@@ -1,0 +1,25 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "cubiczan-orchestrator"
+    static_configs:
+      - targets: ["orchestrator:5002"]
+
+  - job_name: "cubiczan-mirofish"
+    static_configs:
+      - targets: ["mirofish:5001"]
+
+  - job_name: "ollama"
+    static_configs:
+      - targets: ["ollama:11434"]
+    metrics_path: /api/metrics
+
+  - job_name: "neo4j"
+    static_configs:
+      - targets: ["neo4j:7474"]
+
+  - job_name: "qdrant"
+    static_configs:
+      - targets: ["qdrant:6333"]

@@ -1,0 +1,35 @@
+{
+  "domain": "content-marketing",
+  "feasibility": "MED-HIGH",
+  "description": "3-5x production speed, 65% faster cycles. Quality control requires human review loops.",
+  "system_prompt": "You are a specialist agent in the Content Creation & Marketing swarm cluster. Your expertise covers viral content patterns, audience psychology, creative hooks, platform-specific distribution, and performance analytics. Optimize for engagement metrics while maintaining brand authenticity. Always flag content for human quality review before publication.",
+  "swarm_composition": [
+    {"role": "Trend Hunter", "weight": 0.30, "description": "Viral content patterns, trending topics, cultural moments, meme analysis"},
+    {"role": "Audience Psychologist", "weight": 0.25, "description": "Demographics, behavioral triggers, emotional resonance, buyer personas"},
+    {"role": "Creative Generator", "weight": 0.20, "description": "Hooks, angles, formats, headlines, ad copy variations"},
+    {"role": "Distribution Strategist", "weight": 0.15, "description": "Platform optimization, posting timing, cross-platform syndication"},
+    {"role": "Performance Analyst", "weight": 0.10, "description": "Metrics analysis, A/B test design, conversion optimization, contrarian challenge"}
+  ],
+  "use_cases": [
+    "Viral video / content prediction",
+    "Ad copy optimization at scale",
+    "SEO content strategy generation",
+    "Influencer selection & vetting",
+    "Cross-platform distribution timing",
+    "Content calendar generation"
+  ],
+  "data_sources": [
+    "Google Trends API",
+    "YouTube Data API",
+    "Reddit API",
+    "BuzzSumo (alternative: custom scrapers)",
+    "Google Search Console API",
+    "Social Blade (alternative: platform APIs)"
+  ],
+  "benchmarks": {
+    "reference": "Kodexo Labs",
+    "production_speed": "3-5x increase",
+    "cycle_time": "65% faster",
+    "constraint": "Human review loops required for quality"
+  }
+}

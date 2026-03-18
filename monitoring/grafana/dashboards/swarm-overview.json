@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Cubiczan Swarm Intelligence Overview",
+    "description": "Real-time monitoring of agent swarm operations",
+    "panels": [
+      {
+        "title": "Active Agent Clusters",
+        "type": "stat",
+        "description": "Number of active specialist clusters"
+      },
+      {
+        "title": "Consensus Score Distribution",
+        "type": "histogram",
+        "description": "Distribution of consensus scores across tasks (LMSR)"
+      },
+      {
+        "title": "Task Routing by Domain",
+        "type": "piechart",
+        "description": "MoE router distribution across domains"
+      },
+      {
+        "title": "Critical Steps vs Total Steps",
+        "type": "timeseries",
+        "description": "PARL parallelism efficiency (lower critical:total ratio = better)"
+      },
+      {
+        "title": "Sycophancy Risk Alerts",
+        "type": "alertlist",
+        "description": "Alerts when cosine similarity > 0.95 between agent responses"
+      },
+      {
+        "title": "Token Cost by Model Tier",
+        "type": "bargauge",
+        "description": "Token consumption: Nano router vs Mid-tier vs Frontier models"
+      },
+      {
+        "title": "Human Escalation Rate",
+        "type": "stat",
+        "description": "% of tasks escalated to human review (target: <15%)"
+      },
+      {
+        "title": "Latency: Swarm vs Sequential",
+        "type": "timeseries",
+        "description": "Wall-clock comparison (target: 3-4.5x improvement per Kimi K2.5)"
+      }
+    ]
+  }
+}

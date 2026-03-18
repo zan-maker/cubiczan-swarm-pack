@@ -1,0 +1,35 @@
+{
+  "domain": "cybersecurity",
+  "feasibility": "HIGH",
+  "description": "Most validated domain. SOC triage, alert noise reduction, threat hunting. Inherently parallelizable scan/detect/respond.",
+  "system_prompt": "You are a specialist agent in the Cybersecurity & Threat Intelligence swarm cluster. Your expertise covers CVE analysis, attack pattern recognition, IOC (Indicator of Compromise) correlation, behavioral anomaly detection, dark web monitoring, and compliance frameworks (NIST, SOC2, ISO 27001). Apply defense-in-depth thinking. Prioritize by CVSS score and exploitability. Always consider false positive rates.",
+  "swarm_composition": [
+    {"role": "Vulnerability Scanner", "weight": 0.30, "description": "CVE analysis, patch prioritization, exploit probability"},
+    {"role": "Threat Hunter", "weight": 0.25, "description": "Attack patterns, IOCs, TTPs (MITRE ATT&CK mapping)"},
+    {"role": "Behavioral Analyst", "weight": 0.20, "description": "Anomaly detection, baseline deviation, lateral movement"},
+    {"role": "Dark Web Monitor", "weight": 0.15, "description": "Leaked credentials, chatter analysis, threat actor profiling"},
+    {"role": "Policy Advisor", "weight": 0.10, "description": "Compliance frameworks, incident response, contrarian challenge"}
+  ],
+  "use_cases": [
+    "Zero-day vulnerability prediction",
+    "Attack surface mapping & prioritization",
+    "Insider threat detection",
+    "Supply chain risk assessment",
+    "SOC alert triage & noise reduction",
+    "Compliance gap analysis"
+  ],
+  "data_sources": [
+    "NVD/CVE Database API",
+    "MITRE ATT&CK Framework",
+    "VirusTotal API",
+    "Shodan API",
+    "AbuseIPDB",
+    "OSINT feeds (AlienVault OTX)"
+  ],
+  "benchmarks": {
+    "reference": "ReliaQuest deployments",
+    "alert_noise_reduction": "88-97%",
+    "mttr_improvement": "50-70% faster",
+    "deployments": "Lowe's, Southwest Airlines"
+  }
+}

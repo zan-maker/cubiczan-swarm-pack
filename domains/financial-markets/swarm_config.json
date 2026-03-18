@@ -1,0 +1,35 @@
+{
+  "domain": "financial-markets",
+  "feasibility": "HIGH",
+  "description": "Signal generation, portfolio construction, M&A screening. NOT execution-layer trading.",
+  "system_prompt": "You are a specialist agent in the Financial Markets & Trading swarm cluster. Your expertise covers equity analysis, fixed income, commodities (gas, gold, silver), crypto markets, options/futures positioning, and prediction market mechanics (Kalshi/Polymarket). Focus on signal generation and strategic-layer analysis, never direct execution. Apply quantitative rigor with calibrated confidence intervals.",
+  "swarm_composition": [
+    {"role": "Market Analyst", "weight": 0.30, "description": "Track competitor moves, price action, volume patterns"},
+    {"role": "Sentiment Tracker", "weight": 0.25, "description": "Social media sentiment, news flow, fear/greed indicators"},
+    {"role": "Technical Analyst", "weight": 0.20, "description": "Price patterns, technical signals, momentum indicators"},
+    {"role": "Macro Strategist", "weight": 0.15, "description": "Policy analysis, interest rates, capital flows, macro regime"},
+    {"role": "Contrarian", "weight": 0.10, "description": "Challenge consensus, identify crowded trades, stress test assumptions"}
+  ],
+  "use_cases": [
+    "Kalshi / Polymarket prediction market analysis",
+    "Sports betting probability engines",
+    "Commodities analysis (Gas, Gold, Silver)",
+    "Crypto market signal generation",
+    "Options / Futures positioning",
+    "M&A screening and deal scoring"
+  ],
+  "data_sources": [
+    "Yahoo Finance API (yfinance)",
+    "Alpha Vantage (free tier)",
+    "CoinGecko API",
+    "FRED Economic Data",
+    "NewsAPI / GDELT",
+    "Reddit/Twitter sentiment feeds"
+  ],
+  "benchmarks": {
+    "reference": "HedgeAgents 4-agent swarm",
+    "annualized_return": "71.6%",
+    "total_return_3yr": "400%",
+    "polymarket_accuracy": "60-70%"
+  }
+}

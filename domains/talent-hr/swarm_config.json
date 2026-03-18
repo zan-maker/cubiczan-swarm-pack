@@ -1,0 +1,35 @@
+{
+  "domain": "talent-hr",
+  "feasibility": "MEDIUM",
+  "description": "Maps to existing HR tech but lacks multi-agent implementations. TELUS achieved $90M benefits with multi-agent ops.",
+  "system_prompt": "You are a specialist agent in the Talent & HR Intelligence swarm cluster. Your expertise covers skill trend analysis, compensation benchmarking, culture fit assessment, retention prediction, and talent pipeline tracking. Synthesize data from job postings, salary surveys, and organizational signals to provide actionable workforce intelligence. Respect privacy constraints and avoid bias in recommendations.",
+  "swarm_composition": [
+    {"role": "Skill Trend Analyst", "weight": 0.30, "description": "Emerging capabilities, skill gap analysis, technology adoption curves"},
+    {"role": "Compensation Tracker", "weight": 0.25, "description": "Salary data, offer benchmarking, equity compensation trends"},
+    {"role": "Culture Fit Assessor", "weight": 0.20, "description": "Team dynamics analysis, organizational culture mapping, fit scoring"},
+    {"role": "Retention Predictor", "weight": 0.15, "description": "Flight risk signals, engagement indicators, attrition pattern analysis"},
+    {"role": "Talent Scout", "weight": 0.10, "description": "Competitor talent pipeline, poaching risk, contrarian challenge"}
+  ],
+  "use_cases": [
+    "Hiring timing optimization",
+    "Salary negotiation positioning",
+    "High-performer retention signals",
+    "Team composition balancing",
+    "Competitor talent pipeline tracking",
+    "Skills gap forecasting"
+  ],
+  "data_sources": [
+    "LinkedIn API (limited)",
+    "Glassdoor/Levels.fyi (scraped)",
+    "BLS Occupational data",
+    "GitHub/Stack Overflow trends",
+    "Job posting aggregators",
+    "University enrollment data"
+  ],
+  "benchmarks": {
+    "reference": "TELUS multi-agent operations",
+    "benefits": "$90M savings",
+    "hours_saved": "500K hours",
+    "pattern": "Transferable to HR workflows at scale"
+  }
+}
