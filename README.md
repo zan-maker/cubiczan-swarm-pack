@@ -1,5 +1,11 @@
 # CUBICZAN Agent Swarm Intelligence Platform — Installation Pack
 
+
+## Demo
+
+https://github.com/user-attachments/assets/demo.mp4
+
+> _Generated with [demo-video-generator](https://github.com/zan-maker/demo-video-generator)_
 > Zero-token coordination. Heterogeneous agents. Enterprise-grade swarm intelligence.
 
 Built on [MiroFish](https://github.com/666ghj/MiroFish) (AGPL-3.0) swarm simulation + [TEMM1E](https://github.com/nagisanzenin/temm1e) (MIT) stigmergic coordination + [Kimi K2.5 PARL](https://arxiv.org/abs/2602.02276) parallel agent architecture.
